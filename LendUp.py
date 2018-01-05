@@ -6,11 +6,12 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def hello_monkey():
     resp = VoiceResponse()
-    res = resp.say("HELLO MONKEY")
-    return str(res)
+    resp.say("HELLO MONKEY")
+    
+    return str(resp)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 
 
